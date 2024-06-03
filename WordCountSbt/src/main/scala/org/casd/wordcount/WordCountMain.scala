@@ -34,8 +34,8 @@ object WordCountMain extends App {
     val resInRow:RDD[Row] = result.map(t => Row(t._1,t._2))
     resInRow
   }
-  // step1: create a spark session
-  val spark= createSparkSession("Word count", isLocal = true)
+  // step1: create a spark session, set local to true for testing, set it to False when building the jar
+  val spark= createSparkSession("Word count", isLocal = false)
 
   // step2: read data
   val sc = spark.sparkContext
