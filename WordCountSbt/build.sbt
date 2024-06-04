@@ -14,10 +14,10 @@ lazy val root = (project in file("."))
 
 val sparkVersion = "3.5.1"
 libraryDependencies ++= Seq(
-  "org.apache.spark" %% "spark-core" % sparkVersion % "provided",
-  "org.apache.spark" %% "spark-sql" % sparkVersion % "provided"
+  "org.apache.spark" %% "spark-core" % sparkVersion,
+  "org.apache.spark" %% "spark-sql" % sparkVersion
 )
-
+// % "provided"
 fork := true
 
 assembly / assemblyJarName := "spark-wordcount.jar"
